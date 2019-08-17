@@ -42,3 +42,15 @@ it's good to use reshape(1,-1),we shouldn't know the vector of the side.
 ### function numpy.array_split is good for spliting array, even when it occur the number dividable
 [Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.array_split.html)
 
+### Problem how to abstract one of the validation array and use the rest to train
+[CSND的cross validation part](https://blog.csdn.net/qq_22812319/article/details/79677525)
+[np.vstack](https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html?highlight=vstack#numpy.vstack)
+[np.hstack](https://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html?highlight=hstack#numpy.hstack)
+
+### tips: when using np.sum, We can use np.sum(more useful than sum) to add boolean to int
+example: 
+np.sum(5==5) -> 1
+np.sum((1,2,3)==(2,2,3)) -> 0
+np.sum([(1,2,3)]==[(2,2,3)]) ->2 
+the shape can not be a vector!!
+

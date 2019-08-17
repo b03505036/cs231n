@@ -30,6 +30,7 @@ it's good to use reshape(1,-1),we shouldn't know the vector of the side.
 
 ### function argsort -> return the indice of sorted array 
 [Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html?highlight=argsor#numpy.argsort) 
+註：由小到大的indice，也就是說argsort完後取[:k]是k個最小的數字的indice
 
 ### function argmax -> return the indice of max value
 [Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html?highlight=argmax#numpy.argmax) 
@@ -48,9 +49,13 @@ it's good to use reshape(1,-1),we shouldn't know the vector of the side.
 [np.hstack](https://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html?highlight=hstack#numpy.hstack)
 
 ### tips: when using np.sum, We can use np.sum(more useful than sum) to add boolean to int
+
 example: 
+
 np.sum(5==5) -> 1
+
 np.sum((1,2,3)==(2,2,3)) -> 0
+
 np.sum([(1,2,3)]==[(2,2,3)]) ->2 
 the shape can not be a vector!!
 

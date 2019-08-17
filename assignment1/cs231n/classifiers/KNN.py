@@ -2,14 +2,8 @@ from builtins import range
 from builtins import object
 import numpy as np
 from past.builtins import xrange
+from collections import Counter
 
-#Problem input X = (N , Data), Y = (N,) , N for what? N for number of samples
-#Problem dists should be what dim? (N of test,N of data)
-#Problem how to make clone for one raw to fiill the matrix? np.tile(array,(raws,copy number))
-#Again above , how to use broadcasting? Look the tutorial note on cs231n. <Broadcasting> (http://cs231n.github.io/python-numpy-tutorial/#numpy-arrays)
-#Problem how to sum only one direction? axis! axis=1,raw方向相加
-#Problem advancing using broadcast skill for no loop matrix addition. 
-#Problem ((X-Y)^2)^(1/2) X^2(N of test,N of test)+Y^2(N of data, N of dada)-XY-YX https://medium.com/@souravdey/l2-distance-matrix-vectorization-trick-26aa3247ac6c
 class KNearestNeighbor(object):
     """ a kNN classifier with L2 distance """
 
@@ -135,9 +129,9 @@ class KNearestNeighbor(object):
         #########################################################################
         # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-        X_squared = X**2
-        Y_squared = self.X_train**2
-        XY = np.sum(X.dot(self.X_train.T),axis=)
+        X_squared = np.sum(X**2,axis=1)
+        Y_squared = np.sum(self.X_train**2,axis=1)
+        XY = X.dot(self.X_train.T)
         dists = X_squared+Y_squared -2XY
 
         # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
@@ -170,9 +164,7 @@ class KNearestNeighbor(object):
             # Hint: Look up the function numpy.argsort.                             #
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-
-            pass
-
+            closest_y = self.y_train[argsort(dists[i])[:k]]
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
             #########################################################################
             # TODO:                                                                 #
@@ -183,8 +175,8 @@ class KNearestNeighbor(object):
             #########################################################################
             # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
-            pass
-
+            # y_pred[i] = Counter(closest_y).most_common(1)
+            y_pred[i] = np.argmax(np.bincount(closest_y))
             # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
         return y_pred

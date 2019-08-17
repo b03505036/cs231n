@@ -21,3 +21,16 @@ axis! axis=1,raw方向相加
 
 ### Problem ((X-Y)^2)^(1/2)  
 -> stuck in the size of input -> should be example 500X"3000" thank for [CSDN](https://blog.csdn.net/qq_22812319/article/details/79677525)
+
+### Problem find the most K common element in array 
+[Stackoverflow](https://stackoverflow.com/questions/6252280/find-the-most-frequent-number-in-a-numpy-vector)
+
+### function argsort -> return the indice of sorted array 
+[Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argsort.html?highlight=argsor#numpy.argsort) 
+
+### function argmax -> return the indice of max value
+[Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmax.html?highlight=argmax#numpy.argmax) 
+
+### function bincount-> return the times the element occurrences. indice is the element.
+[Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.bincount.html)
+

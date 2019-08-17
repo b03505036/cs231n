@@ -18,6 +18,9 @@ Look the tutorial note on cs231n. [Broadcasting](http://cs231n.github.io/python-
 axis! axis=1,raw方向相加
 
 ### Problem advancing using broadcast skill for no loop matrix addition. 
+broadcasting is avaliable only in multiplication and add.
+Have to have "1" or "same size of one direction"
+it's good to use reshape(1,-1),we shouldn't know the vector of the side.
 
 ### Problem ((X-Y)^2)^(1/2)  
 -> stuck in the size of input -> should be example 500X"3000" thank for [CSDN](https://blog.csdn.net/qq_22812319/article/details/79677525)
@@ -33,4 +36,9 @@ axis! axis=1,raw方向相加
 
 ### function bincount-> return the times the element occurrences. indice is the element.
 [Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.bincount.html)
+
+## Cross-validation
+
+### function numpy.array_split is good for spliting array, even when it occur the number dividable
+[Numpy 文檔](https://docs.scipy.org/doc/numpy/reference/generated/numpy.array_split.html)
 

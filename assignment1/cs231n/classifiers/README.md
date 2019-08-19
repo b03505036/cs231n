@@ -59,3 +59,30 @@ np.sum((1,2,3)==(2,2,3)) -> 0
 np.sum([(1,2,3)]==[(2,2,3)]) ->2 
 the shape can not be a vector!!
 
+## linear_SVM
+
+### bias trick
+third: append the bias dimension of ones (i.e. bias trick) so that our SVM only has to worry about optimizing a single weight matrix W.
+X_train = np.hstack([X_train, np.ones((X_train.shape[0], 1))])
+X_val = np.hstack([X_val, np.ones((X_val.shape[0], 1))])
+X_test = np.hstack([X_test, np.ones((X_test.shape[0], 1))])
+X_dev = np.hstack([X_dev, np.ones((X_dev.shape[0], 1))])
+
+### SVM, we have multiple classes . "each test" data we will give them "C" scores to choose the highest one.
+
+### Problem How to calculate SVM's gredient 
+
+[CSND 講解的非常棒](https://blog.csdn.net/CV_YOU/article/details/78077329)
+[analytic solution 講解的非常棒](https://mlxai.github.io/2017/01/06/vectorized-implementation-of-svm-loss-and-gradient-update.html)
+
+only modify W when 1(xiWj - xiWyi +1>0) occur,which means sorting into wrong class
+
+
+∇Wyi Li = - xiT(∑j≠yi 1(xiWj - xiWyi +1>0)) + 2λWyi （j = y[i]）(當w在yi那行的更新)
+
+
+∇Wj Li = xiT 1(xiWj - xiWyi +1>0) + 2λWj , (j≠yi) (j != y[i]) (當w不在yi那行的更新)
+
+Q: why the sigama is missing？ no missing look to [analytic solution](https://mlxai.github.io/2017/01/06/vectorized-implementation-of-svm-loss-and-gradient-update.html)
+
+### 

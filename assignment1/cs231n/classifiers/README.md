@@ -100,3 +100,10 @@ example : matrix[matrix>0]
 ### Using np.random.choice to generate indice is faster than just random
 
 ### hyper-parameter is good to use np.random.uniform(low=1e-7, high=5e-5, size=(10,)) to set
+
+## softmax 
+
+###Problem to derive the gradient of softmax
+[CSND Good!](https://blog.csdn.net/zhangxb35/article/details/55223825)
+
+
